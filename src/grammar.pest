@@ -1,0 +1,5 @@
+phone_number = { "+" ~ country_code ~ separator ~ area_code ~ separator ~ subscriber_number }
+country_code = { ASCII_DIGIT+ }
+separator = { " " | "-" | "(" | ")" }
+area_code = { "(" ~ ASCII_DIGIT+ ~ ")" | ASCII_DIGIT+ }
+subscriber_number = { ASCII_DIGIT+ ~ "-" ~ ASCII_DIGIT+ | ASCII_DIGIT+ }
