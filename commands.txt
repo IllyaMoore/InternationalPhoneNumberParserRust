@@ -1,0 +1,8 @@
+# Показати довідку
+cargo run -- --help
+
+# Парсинг файлу
+cargo run -- --parse crs/numbers.txt
+
+# Показати інформацію про програму
+cargo run -- --credits

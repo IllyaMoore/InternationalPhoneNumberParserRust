@@ -1,5 +1,6 @@
-phone_number = { "+" ~ country_code ~ separator ~ area_code ~ separator ~ subscriber_number }
+phone_number = { "+" ~ ((ASCII_DIGIT{7,}) | (country_code ~ ws* ~ ((area_code? ~ ws* ~ subscriber_number) | (ASCII_DIGIT+ ~ (ws* ~ ASCII_DIGIT+)*)))) ~ ws* ~ extension? ~ EOI }
 country_code = { ASCII_DIGIT+ }
-separator = { " " | "-" | "(" | ")" }
 area_code = { "(" ~ ASCII_DIGIT+ ~ ")" | ASCII_DIGIT+ }
-subscriber_number = { ASCII_DIGIT+ ~ "-" ~ ASCII_DIGIT+ | ASCII_DIGIT+ }
+subscriber_number = { ASCII_DIGIT+ ~ (ws* ~ (("-" | " ") ~ ws*)? ~ ASCII_DIGIT+)* }
+extension = { ws* ~ (("ext." ~ ws* ~ ASCII_DIGIT+) | ("x" ~ ASCII_DIGIT+) | ("#" ~ ASCII_DIGIT+)) }
+ws = _{ " "+ }

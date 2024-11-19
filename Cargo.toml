@@ -1,5 +1,5 @@
 [package]
-name = "InternationalPhoneNumberParser"
+name = "international_phone_number_parser"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,6 +7,11 @@ description = "A Rust phone number parser using Pest to validate and parse inter
 repository = "https://github.com/IllyaMoore/InternationalPhoneNumberParser.git"
 
 [dependencies]
+thiserror = "1.0"
 anyhow = "1.0.93"     
 pest = "2.7.14"       
 pest_derive = "2.7.14"
+
+[dev-dependencies]
+anyhow = "1.0"
+tempfile = "3.4"
