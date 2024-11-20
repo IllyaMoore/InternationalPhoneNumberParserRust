@@ -2,7 +2,14 @@
 cargo run -- --help
 
 # Парсинг файлу
-cargo run -- --parse crs/numbers.txt
+cargo run -- --parse src/numbers.txt
 
 # Показати інформацію про програму
 cargo run -- --credits
+
+# Показати інформацію про файл
+cargo run -- --info src/numbers.txt
+
+# Показати недійсні номери телефонів
+cargo run -- --validate src/numbers.txt
+to test: cargo run -- --validate src/valid_numbers.txt
