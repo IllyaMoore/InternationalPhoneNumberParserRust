@@ -1,3 +1,6 @@
+#tests
+cargo test
+
 # Показати довідку
 cargo run -- --help
 
@@ -12,4 +15,5 @@ cargo run -- --info src/numbers.txt
 
 # Показати недійсні номери телефонів
 cargo run -- --validate src/numbers.txt
-to test: cargo run -- --validate src/valid_numbers.txt
+to test: 
+cargo run -- --validate src/valid_numbers.txt

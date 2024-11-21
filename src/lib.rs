@@ -21,7 +21,12 @@ pub fn parse_file(filename: &str) -> Result<Vec<String>, String> {
             Ok(parsed) => {
                 let country_code = extract_country_code(line);
                 let country = country_name(&country_code).unwrap_or("Unknown Country");
-                results.push(format!("Line {}: {} - Valid ({})", line_number + 1, line, country));
+                results.push(format!(
+                    "Line {}: {} - Valid ({})",
+                    line_number + 1,
+                    line,
+                    country
+                ));
             }
             Err(err) => {
                 results.push(format!(

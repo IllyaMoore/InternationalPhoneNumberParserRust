@@ -2,7 +2,7 @@ use std::env;
 use std::process;
 
 use international_phone_number_parser::validate_file;
-use international_phone_number_parser::{parse_file, file_info};
+use international_phone_number_parser::{file_info, parse_file};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -54,7 +54,7 @@ fn main() {
                 process::exit(1);
             }
             match validate_file(&args[2]) {
-                Ok(_) => println!("Validation successful! All phone numbers are valid."),
+                Ok(_) => println!("\n--------------------------------------------------\nValidation successful! All phone numbers are valid.\n--------------------------------------------------\n"),
                 Err(err) => {
                     println!("{}", err);
                     process::exit(1);
